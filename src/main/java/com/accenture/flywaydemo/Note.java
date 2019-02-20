@@ -25,6 +25,8 @@ import static lombok.AccessLevel.PRIVATE;
 @Table(name = "NOTES")
 public class Note {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
     @NotNull
     @NonNull
