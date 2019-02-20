@@ -1,12 +1,14 @@
 package com.accenture.flywaydemo;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -14,9 +16,12 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import static javax.persistence.GenerationType.AUTO;
+import static lombok.AccessLevel.PRIVATE;
 
-@Data
 @Entity
+@Getter
+@NoArgsConstructor(access = PRIVATE)
+@AllArgsConstructor
 @Table(name = "NOTES")
 public class Note {
 
@@ -30,7 +35,11 @@ public class Note {
     @Column(name = "TEXT")
     private String text;
 
+    @Column(name = "ASSIGNEE")
+    private String assignee;
+
     @Column(name = "TO_BE_DONE_BY")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime toBeDoneBy;
 
     @Column(name = "DONE")
