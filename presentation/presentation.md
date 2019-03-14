@@ -16,9 +16,10 @@
 ## What are the benefits
 
 * Reproducible db state
-* Know the version your db is in
+* Know the version of your schema
 * Quick and easy setup of new environments
 * Supports zero-downtime updates
+* Application maintains DB schema state
 
 ----
 
@@ -27,7 +28,7 @@
 ![ogo](./images/schema_version.png)
 
 * Schema version table
-* Flyway checks all version
+* Flyway checks all versions
     * Fails on checksum mismatch
     * Only applies not already executed scripts
     
@@ -36,13 +37,13 @@
 ## How to use it?
 
 * Command Line (flyway migrate)
-* Java API --> Spring integration
+* Java API ==> Spring integration
 * Maven API
 * Gradle API
 
 ---
 
-## Best Pratices
+## Best Practices
 
 * Use idempotent operations
     * Check if item already exists
@@ -52,7 +53,7 @@
 
 ----
 
-## Best Pratices Continued
+## Best Practices Continued
 
 * Do not create users with migrations
 * Always roll forward
